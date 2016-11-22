@@ -1,0 +1,69 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<firebase-pager></firebase-pager>` firebase-paginate
+  @demo demo.html
+-->
+<dom-module id="firebase-pager">
+  <template>
+    
+       
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "firebase-pager",
+    properties:{
+      path:{
+        value:"deko-data",
+        type:String,
+      },
+      page:{
+        type:Object,
+        computed:"getPage(baseRef)",
+      },
+      baseRef:{
+        computed:"getBaseRef(path)",
+        type:Object,
+      },
+      ref:{
+        type:Object,
+        computed:"getRef(baseRef, orderByField)",
+      },
+      orderByField:{
+        value:'$key',
+        type:String,
+      },
+      setValue:{
+        computed:"getValue(ref)",
+      },
+      value:{
+        notify:true,
+      },
+    },
+    getPage: function(baseRef, orderByField){
+      return new Firebase.util.Paginate(baseRef, orderByField).page
+    },
+    getBaseRef: function(path){
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyA7bHZD1jlPsPZdYciJV-79wAaSoP-ADNw",
+          authDomain: "deko-dash.firebaseapp.com",
+          databaseURL: "https://deko-dash.firebaseio.com",
+          storageBucket: "deko-dash.appspot.com",
+          messagingSenderId: "777159846656"
+        };
+        firebase.initializeApp(config);
+      return firebase.database().ref(path)
+    },
+    getRef: function(baseRef, orderByField){
+      return new Firebase.util.Page(baseRef, orderByField, {pageSize: 10});
+    },
+    getValue: function(ref){
+      var that = this
+      console.log("making")
+      ref.on('val', function(snap) {
+         console.log(that.value = snap.val())
+      })
+    },
+  })
+</script>

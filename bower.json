@@ -1,0 +1,13 @@
+{
+  "name": "firebase-pager",
+  "version": "1.0.0",
+  "description": "\n    \n    \n    \n  ",
+  "main": "firebase-pager.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": "*"
+  }
+}
