@@ -4,11 +4,22 @@
   <head>
     <title>firebase-pager demo</title>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../firebase/firebase.js"></script>    
+    <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyA7bHZD1jlPsPZdYciJV-79wAaSoP-ADNw",
+          authDomain: "deko-dash.firebaseapp.com",
+          databaseURL: "https://deko-dash.firebaseio.com",
+          storageBucket: "deko-dash.appspot.com",
+          messagingSenderId: "777159846656"
+        };
+        firebase.initializeApp(config);
+    </script>
     <link rel="import" href="firebase-pager.html">
   </head>
   <body>
     <h3>firebase-pager Demo</h3>
     <firebase-pager ></firebase-pager>
   </body>
-  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script> 
 </html>
