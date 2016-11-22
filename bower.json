@@ -10,6 +10,6 @@
   "dependencies": {
     "polymer": "*",
     "firebase-util":"marcus7777/firebase-util",
-    "firebase":"firebase/firebase-bower"
+    "firebase-import":"marcus7777/firebase-import"
   }
 }
