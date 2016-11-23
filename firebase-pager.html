@@ -38,7 +38,7 @@
       },
     },
     getPage: function(baseRef, orderByField){
-      return new Firebase.util.Paginate(baseRef, orderByField).page
+      return new firebase.util.Paginate(baseRef, orderByField).page
     },
     getBaseRef: function(path){
       return firebase.database().ref(path)
