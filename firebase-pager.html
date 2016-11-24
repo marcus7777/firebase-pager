@@ -44,7 +44,7 @@
       return firebase.database().ref(path)
     },
     getRef: function(baseRef, orderByField){
-      return new firebase.util.Page(baseRef, orderByField, {pageSize: 10});
+      return baseRef.orderByField
     },
     getValue: function(ref){
       var that = this
